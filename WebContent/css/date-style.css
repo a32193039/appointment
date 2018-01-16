@@ -1,0 +1,38 @@
+.l1_1{margin:0 10px 0 10px; background-color: #efeff4;}
+.tit2{height:35px;line-height:35px;border-top:2px solid #38A2DB;font-size:16px;background:#f8f8f8;padding:0 8px;}
+.tit2 span{float:right;font-size:14px;}
+.tit2 span a{display:inline-block;margin-left:10px;}
+.tit2 h3{font-size:18px;font-weight:normal;}
+.tit2 i{float:right;font-size:14px;color:#666;}
+.dashiji{border-top:1px solid #e9e9e9;position:relative;width:330px;}
+.dashiji_time{line-height:53px;font-size:18px;color:#222;padding-left:10px;}
+.dashiji_page{position:absolute;right:10px;color:#aaa;font-size:14px;width:65px;text-align:center;top:18px;}
+.dashiji_page span{float:left;width:12px;height:13px;margin-top:1px;cursor:pointer;overflow:hidden;background:#ddd;}
+.dashiji_page .d_l{background-position:0 -80px;}
+.dashiji_page .d_r{float:right;background-position:0 -94px;}
+.dashiji_page .d_l2{background-position:0 -108px;}
+.dashiji_page .d_r2{float:right;background-position:0 -122px;}
+.dashiji_page i{color:#38a2db;}
+.dashiji_box{background:#f8f8f8;height:244px;border-bottom:1px solid #ededed;}
+.dashiji_box b{display:block;padding:18px 10px 15px;font-size:16px;}
+.dashiji_box p{padding:0 10px;font-size:14px;color:#555;line-height:20px;}
+.dashiji_box p a{color:#39c;}
+/*日历*/
+.calendar{border:1px solid #eee;padding:0 9px;width:280px;z-index:999;}
+#calendar table{ table-layout: fixed;}
+#calendar thead{color:#fff;}
+#calendar td,#calendar th{text-align:center;vertical-align:middle;color:#2bb4db;height:102px;font-size: 22px; border: 2px solid #fff;}
+
+#calendar th{width:330px;}
+#calendar div{margin:0 auto;color:#374a4f;font-size:36px; height: 102px; line-height: 102px; background: #cde1e4; position: relative;}
+#calendar div.w-date-relax-icon{ background: #cde1e4 url(../images/date-relax-icon.png) no-repeat right bottom;}
+#calendar div.w-date-all-icon{ background:#cde1e4 url(../images/date-all-icon.png) no-repeat right bottom;}
+#calendar .c_today{color:#333;font-weight:bold;}
+#calendar .has{background:#2cb0b2;color:#333;cursor: pointer;}
+#calendar .current{color:#fff; background:#00923f url("../images/check-suc.png") no-repeat right bottom;  box-shadow: inset 0 0 0 4px #ff973a;}
+#calendar p{cursor:pointer;color:#fff;font-size:12px;padding:0;margin:0;}
+#calendar .prev,#calendar .next{width:40px;}
+#calendar #calendar_title{cursor:pointer;text-align:center;width:294px;}
+.t-info-date-box{ padding: 20px 30px;}
+.t-info-date-box span{ width: 24px; height: 24px; background-color: #cde1e4; display: inline-block; vertical-align: middle; margin: 0 10px 0 125px;}
+.t-info-date-box span.green{ background-color: #2cb0b2; margin-left: 0;}

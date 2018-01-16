@@ -1,0 +1,361 @@
+<!DOCTYPE ">
+<!-- saved from url=(0072)http://aliwxbook.srv.api.ciming.com/weixinBookClient/city/organBook.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="联康体检,在线预约,报告查询,健康管理">  
+<meta name="keywords" content="联康体检,在线预约,报告查询,健康管理">
+<meta name="robots" content="all">
+    <meta http-equiv="pragma" content="no-cache">  
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">  
+    <meta http-equiv="expires" content="0">   
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=740px, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+<title>联康移动预约平台</title> 
+
+
+<link rel="stylesheet" href="../css/CMBase.css">
+<link rel="stylesheet" href="../css/CMskin.css">
+
+<script type="text/javascript" src="../js/jquery-1.9.1.js"></script>	
+<script type="text/javascript" src="../js/jsMD5.js"></script>	
+<script type="text/javascript" src="../js/postData.js"></script>	
+<script type="text/javascript" src="../js/common.js"></script>	
+
+<script type="text/javascript">
+
+String.prototype.format = function(args) {
+    var result = this;
+    if (arguments.length > 0) {    
+        if (arguments.length == 1 && typeof (args) == "object") {
+            for (var key in args) {
+                if(args[key]!=undefined){
+                    var reg = new RegExp("({" + key + "})", "g");
+                    result = result.replace(reg, args[key]);
+                }
+            }
+        }
+        else {
+            for (var i = 0; i < arguments.length; i++) {
+                if (arguments[i] != undefined) {
+                    var reg = new RegExp("({[" + i + "]})", "g");
+                    result = result.replace(reg, arguments[i]);
+                }
+            }
+        }
+    }
+    return result;
+}
+
+
+
+</script>
+</head>
+
+<body>
+<!---------顶部登录信息-------start --->
+
+<div class="cus_top">
+	
+
+
+
+
+ <div class="s-head">
+        <img class="img" src="../images/lglogo.jpg" alt="" width="120">
+        <span class="nav-info">
+           <img src="../images/cm-logo-r.png" alt="">
+        </span>
+    </div>
+<script type="text/javascript">
+
+  
+
+</script>
+</div>
+
+<!---------顶部登录信息-------end -->
+
+<!---------导航菜单-------start->
+<!--导航菜单-->
+ 
+<!---------导航菜单-------end->
+	
+<!--当前位置   --->
+ 
+
+<!---------当前位置-------end->
+
+<!---------主体内容------ start  -->
+<div class="book_con">
+	
+
+
+
+
+<link rel="stylesheet" href="../css/date-style.css">
+
+<script type="text/javascript">
+      
+
+$(function(){
+
+});    
+ 
+function show(id){
+	post('http://aliwxbook.srv.api.ciming.com/weixinBookClient/city/organDetail.html', {organId :id});
+}
+
+function refresh(){
+	$("#calendar div").each(function(){
+	    if( $(this).hasClass("has")){
+	    	$(this).removeClass("current");
+	    }
+	 });
+	$("#selected_date").val("");
+}
+
+function refreshBook()
+{
+	var oId = '0001024';
+	post('http://aliwxbook.srv.api.ciming.com/weixinBookClient/city/organBook.html', {organId :oId});
+}
+
+function check(){
+	var organTimeSpanid =  $("#timespan").val();
+	if(isNull(organTimeSpanid)){
+		errorPrompt("请选择到检时间");
+		return;
+	}
+	var organTimeSpanText = $("#timespan").find("option:selected").text();
+
+	if(!$("#selected_date").val()){
+		errorPrompt("请选择预约日期");
+	}else{
+		var date=$("#selected_date").val();
+		var organId=$("#organ_id").val();
+		var organName = $("#organ_name").val();
+		post('../cityList/bookSuccess.html', {organId :organId, date :date,organName:organName,fid:organTimeSpanid,fname:organTimeSpanText});
+	}
+}
+
+</script>
+<script type="text/javascript">
+ var rili_json={"list":[{"data":[{"item":[{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"12"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"13"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"14"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"15"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"16"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"17"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"18"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"19"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"20"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"21"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"22"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"23"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"24"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"25"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"26"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"27"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"28"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"29"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"30"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"31"}],"themonth":"01"}],"theyear":"2018"},{"data":[{"item":[{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"01"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"02"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"03"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"04"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"05"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"06"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"07"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"08"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"09"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"10"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"11"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"12"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"13"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"14"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"15"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"16"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"17"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"18"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"19"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"20"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"21"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"22"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"23"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"24"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"25"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"26"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"27"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"28"}],"themonth":"02"}],"theyear":"2018"},{"data":[{"item":[{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"01"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"02"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"03"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"04"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"05"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"06"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"07"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"08"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"09"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"10"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"11"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"12"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"13"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"14"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"15"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"16"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"17"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"18"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"19"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"20"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"21"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"22"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"23"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"24"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"25"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"26"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"27"},{"info":"1","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"28"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"29"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"30"},{"info":"0","openTime":[{"fid":"1","fname":"8:00-8:30","myrowid":"709A2C93259E41ACAD0F71C772A8075B","operatedate":1241539200000,"upflag":"0"},{"fid":"2","fname":"8:30-9:00","myrowid":"911B8546B1D7444883CCC264BF43146E","operatedate":1241539200000,"upflag":"0"},{"fid":"3","fname":"9:00-9:30","myrowid":"A542C5403D7C4F2786A62C1BAD5B1D64","operatedate":1241539200000,"upflag":"0"},{"fid":"4","fname":"9:30-10:00","myrowid":"8E3664D15E204906B9B96B59D3466B23","operatedate":1241539200000,"upflag":"0"},{"fid":"5","fname":"10:00-10:30","myrowid":"7C56270AADF546CDAB8E44E885ED1483","operatedate":1243872000000,"upflag":"0"}],"thedate":"31"}],"themonth":"03"}],"theyear":"2018"}],"maxDate":"2018-3-31","nowdate":"2018-1-12","showdate":""};
+ 
+
+//var rili_json={"list":[{"data":[{"item":[{"info":"1","thedate":"09"},{"info":"1","thedate":"10"},{"info":"1","thedate":"11"},{"info":"1","thedate":"12"},{"info":"1","thedate":"13"},{"info":"1","thedate":"14"},{"info":"1","thedate":"15"},{"info":"1","thedate":"16"},{"info":"1","thedate":"17"},{"info":"2","thedate":"18"},{"info":"1","thedate":"19"},{"info":"1","thedate":"20"},{"info":"1","thedate":"21"},{"info":"1","thedate":"22"},{"info":"1","thedate":"23"},{"info":"1","thedate":"24"},{"info":"1","thedate":"25"},{"info":"1","thedate":"26"},{"info":"1","thedate":"27"},{"info":"1","thedate":"28"},{"info":"1","thedate":"29"},{"info":"1","thedate":"30"},{"info":"1","thedate":"31"}],"themonth":"03"}],"theyear":"2016"},{"data":[{"item":[{"info":"1","thedate":"01"},{"info":"1","thedate":"02"},{"info":"1","thedate":"03"},{"info":"1","thedate":"04"},{"info":"1","thedate":"05"},{"info":"1","thedate":"06"},{"info":"1","thedate":"07"},{"info":"1","thedate":"08"},{"info":"1","thedate":"09"},{"info":"1","thedate":"10"},{"info":"1","thedate":"11"},{"info":"1","thedate":"12"},{"info":"1","thedate":"13"},{"info":"1","thedate":"14"},{"info":"1","thedate":"15"},{"info":"1","thedate":"16"},{"info":"1","thedate":"17"},{"info":"1","thedate":"18"},{"info":"1","thedate":"19"},{"info":"1","thedate":"20"},{"info":"1","thedate":"21"},{"info":"1","thedate":"22"},{"info":"1","thedate":"23"},{"info":"1","thedate":"24"},{"info":"1","thedate":"25"},{"info":"1","thedate":"26"},{"info":"1","thedate":"27"},{"info":"1","thedate":"28"},{"info":"1","thedate":"29"},{"info":"1","thedate":"30"}],"themonth":"04"}],"theyear":"2016"}],"nowdate":"2016-3-9","showdate":""}
+
+	
+</script> 
+      
+    <!--面包屑-->
+    <div class="w-bread-cream-box">
+        当前位置：<span>选择预约日期</span>
+        <a class="w-back-arrow-icon" href="javascript:history.go(-1);"></a>
+    </div>
+    <!--start-->
+    <!--使用帮助-->
+   <div class="w-help-cm-box" onclick="readme(&#39;请在此选择您所要预约体检的具体日期。点击下方的刷新按钮，即可实时刷新该体检分院的预约情况。&#39;);">
+        <i class="a-help-icon"></i>
+        <span>使用帮助</span>
+    </div>
+    
+    <div class="t-templete-box t-templete-box-borderAdd">
+        <h4 onclick="show(&#39;0001024&#39;);">
+              预约地址 :  太原联康体检中心<input type="hidden" id="selected_date" name="selected_date"> <input type="hidden" id="organ_id" name="organ_id" value="0001024">
+              <input type="hidden" id="organ_name" name="organ_name" value="北京雍和宫门诊部">
+            <span class="w-arrow-right"></span>
+        </h4>
+       <div class="l1_1" id="timeList">
+            <div>
+                <div class="bor0127" id="timespan_contain">体检时间：
+                <select name="timespan" id="timespan" style="padding:15px 15px 15px 25px; background-color: #fff;margin:0">
+                
+                </select>
+                </div>
+            </div>
+        </div>
+        <div class="l1_1">
+				<div>
+					<div class="bor0127" id="calendar_contain">
+						<table id="calendar" cellspacing="0" cellpadding="0" width="100%">
+							<tbody>
+								<tr>
+									<th colspan="7"
+										style="border-bottom: 1px solid #CDCFD3; background: #FFF">
+										<p title="上一月份" onclick="JCalendar.update(-1);return false" style="float: left;" class="prev">
+											<img src="../images/prev.png" width="40" height="40">
+										</p>
+										<p id="calendar_title"
+											style="float: left; color: #333; font-weight: normal; font-size: 28px; width: 87%;">2018年01月</p>
+										<p title="下一月份" onclick="JCalendar.update(1);return false"
+											style="float: right;" class="next">
+											<img src="../images/next.png" width="40" height="40">
+										</p></th>
+								</tr>
+								<tr>
+									<td style="background: #fff;">日</td>
+									<td style="background: #fff">一</td>
+									<td style="background: #fff">二</td>
+									<td style="background: #fff">三</td>
+									<td style="background: #fff">四</td>
+									<td style="background: #fff">五</td>
+									<td style="background: #fff;">六</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td><div onclick="JCalendar.click(this)">1</div></td>
+									<td><div onclick="JCalendar.click(this)">2</div></td>
+									<td><div onclick="JCalendar.click(this)">3</div></td>
+									<td><div onclick="JCalendar.click(this)">4</div></td>
+									<td><div onclick="JCalendar.click(this)">5</div></td>
+									<td><div onclick="JCalendar.click(this)">6</div></td>
+								</tr>
+								<tr>
+									<td><div onclick="JCalendar.click(this)">7</div></td>
+									<td><div onclick="JCalendar.click(this)">8</div></td>
+									<td><div onclick="JCalendar.click(this)">9</div></td>
+									<td><div onclick="JCalendar.click(this)">10</div></td>
+									<td><div onclick="JCalendar.click(this)">11</div></td>
+									<td><div id="c_today" class="c_today has"
+											onclick="JCalendar.click(this)">12</div></td>
+									<td><div onclick="JCalendar.click(this)" class="has">13</div></td>
+								</tr>
+								<tr>
+									<td><div onclick="JCalendar.click(this)" class="has">14</div></td>
+									<td><div onclick="JCalendar.click(this)" class="has">15</div></td>
+									<td><div onclick="JCalendar.click(this)" class="has">16</div></td>
+									<td><div onclick="JCalendar.click(this)"
+											class="w-date-relax-icon">17</div></td>
+									<td><div onclick="JCalendar.click(this)" class="has">18</div></td>
+									<td><div onclick="JCalendar.click(this)" class="has">19</div></td>
+									<td><div onclick="JCalendar.click(this)" class="has">20</div></td>
+								</tr>
+								<tr>
+									<td><div onclick="JCalendar.click(this)" class="has">21</div></td>
+									<td><div onclick="JCalendar.click(this)" class="has">22</div></td>
+									<td><div onclick="JCalendar.click(this)" class="has">23</div></td>
+									<td><div onclick="JCalendar.click(this)"
+											class="w-date-relax-icon">24</div></td>
+									<td><div onclick="JCalendar.click(this)" class="has">25</div></td>
+									<td><div onclick="JCalendar.click(this)" class="has">26</div></td>
+									<td><div onclick="JCalendar.click(this)" class="has">27</div></td>
+								</tr>
+								<tr>
+									<td><div onclick="JCalendar.click(this)" class="has">28</div></td>
+									<td><div onclick="JCalendar.click(this)" class="has">29</div></td>
+									<td><div onclick="JCalendar.click(this)" class="has">30</div></td>
+									<td><div onclick="JCalendar.click(this)"
+											class="w-date-relax-icon">31</div></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+						<table cellspacing="2" cellpadding="0" width="280">
+							<tbody>
+								<tr>
+									<td colspan="7" style="background: #fff; display: none;"><p
+											title="上一年份" onclick="this.style.color=&#39;#c00&#39;"
+											onmouseout="this.style.color=&#39;#616161&#39;"
+											style="float: left; color: #616161; margin-right: 4px; margin-left: 4px; cursor: pointer;">&lt;&lt;上一年份</p>
+										<p title="下一年份" onclick="JCalendar.update(12);return false"
+											onmouseout="this.style.color=&#39;#616161&#39;"
+											style="float: right; margin-left: 4px; color: #616161; cursor: pointer;">下一年份&gt;&gt;</p></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+
+				<!--
+                休：
+                <i class="w-date-relax-icon"></i>
+                满：
+                <i class="w-date-all-icon"></i
+                -->
+
+            <div class="t-info-date-box">
+                <span class="green"></span>可预约
+                <span></span>不可预约
+                
+            </div>
+        </div>
+
+	</div>
+	
+
+    <!--end-->
+    <div class="x-menu-fix-box">
+    <div class="xm-inner">
+        <div class="xm-btn">
+            <a class="u-btn u-btn-well" onclick="refreshBook();">刷新</a>
+            <a class="u-btn u-btn-well" onclick="check();">提交预约</a>
+        </div>
+    </div>
+</div>
+<div id="w-error-popup-white_foot_help" class="w-error-popup-white" style="display: none;">
+    <div class="w-error-back"></div>
+    <div class="w-error-inner">
+        <div class="w-error-content" style="height: auto; font-size: 26px;">
+        	<img style="padding: 0 0 20px 0;" src="../images/tishi.png" alt="">
+        	<p id="w-confirm-content_foot_help"></p>
+        </div>
+        <div class="btn" style="padding: 1rem; text-align: center;">
+            <a class="u-btn u-btn-orange" href="javascript:closeRead();">知道了</a>
+        </div>
+        <img style="position: absolute; right: 0; bottom: 10px;" src="../images/person.png" alt="">
+    </div>
+</div>
+<script type="text/javascript" src="../js/rili.js"></script> 
+</div>
+
+
+<!---------主体内容------ end   -->
+
+<!---------主体内容------ end    -->
+	
+<!----------底部 ----- start --->
+<div class="cus_bottom">
+	
+</div>
+<!--------  	 底部   ---end------->	
+
+<script type="text/javascript">
+$(function(){
+	$(window).resize(function () {
+	  tabPanelAdjust();
+	});
+})
+function tabPanelAdjust() {
+	    //var top = $("#footer").offset().top;
+	    var user_message_box = $('#footer');
+	    top > 400 ? user_message_box.hide() : user_message_box.show();
+};
+</script>	
+
+<script type="text/javascript">
+/* function isNull(data){
+	if (variable1 !== null || variable1 !== undefined || variable1 !== '') { 
+		return false; 
+	} else return true;
+} */
+
+</script>
+
+	<div id="loading_area" style="display: none;width: 100%;position: fixed;z-index: 99999;height: 100%;top: 0;background-color: rgba(0,0,0,0.8);padding: 0 38%;box-sizing: border-box;"><div style="background: url(http://video.soundtooth.cn/dist/skin/blue.monday/image/loading.gif) no-repeat;background-size: contain;width: 40px;height: 40px;margin: 250px auto 0;"></div><div style="font-size: 14px;text-align: center;margin-top: 10%; color: #cccccc;">正在为您配置加速环境</div></div></body></html>
